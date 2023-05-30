@@ -1,0 +1,194 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Arial', sans-serif;
+  background-color: #111;
+}
+
+main {
+  background-color: #000;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  flex-grow: 1;
+  margin-left: 20px;
+  animation: backgroundAnimation 10s infinite;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-color: #FF0066;
+  }
+  20% {
+    background-color: #FFCC33;
+  }
+  44% {
+    background-color: #ff0077;
+  }
+  65% {
+    background-color: #9933FF;
+  }
+  90% {
+    background-color: #00FFFF;
+  }
+  100% {
+    background-color: #FF0066;
+  }
+}
+
+.score-container {
+  margin-top: 20px;
+}
+
+.score-history {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.score-history-text {
+  font-size: 24px;
+  text-align: center;
+  animation: textAnimation 5s infinite;
+}
+
+@keyframes textAnimation {
+  0% {
+    color: #FF0066;
+  }
+  25% {
+    color: #FFCC33;
+  }
+  50% {
+    color: #00FF99;
+  }
+  75% {
+    color: #9933FF;
+  }
+  100% {
+    color: #00FFFF;
+  }
+}
+
+.score-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: #FFF;
+  padding: 10px;
+  border-radius: 5px;
+  animation: itemAnimation 5s;
+}
+
+@keyframes itemAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.score-item:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+
+.dice-value {
+  background-color: #FFF;
+  color: #000;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  animation: valueAnimation 3s infinite;
+}
+
+@keyframes valueAnimation {
+  0% {
+    color: #FF0066;
+  }
+  25% {
+    color: #FFCC33;
+  }
+  50% {
+    color: #00FF99;
+  }
+  75% {
+    color: #9933FF;
+  }
+  100% {
+    color: #00FFFF;
+  }
+}
+
+.dice-container {
+  display: grid;
+  grid-template: auto auto / repeat(5, 1fr);
+  gap: 10px;
+  justify-items: center;
+}
+
+.die-face {
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #FFF;
+  animation: faceAnimation 3s infinite;
+}
+
+.die-face.held {
+  background-color: #FFCC00;
+}
+
+
+
+.die-num {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.roll-button {
+  margin-top: 30px;
+  height: 50px;
+  width: 100px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #FFF;
+  font-weight: bold;
+  font-size: 16px;
+  color: #000;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roll-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.roll-button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
