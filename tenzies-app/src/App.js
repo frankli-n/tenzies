@@ -41,7 +41,7 @@ function App() {
         } else {
           return {
             ...x,
-            value: Math.floor(Math.random() * 2) + 1,
+            value: Math.floor(Math.random() * 6) + 1,
           };
         }
       })
@@ -68,7 +68,6 @@ function App() {
   }
 
   function checkForWin() {
-    const diceValues = diceArray.map((obj) => obj["value"]);
     const areNumsSame = diceArray.every((x) => x.value === diceArray[0].value);
     const areNumsHeld = diceArray.every((x) => x.isHeld);
     if (areNumsSame && areNumsHeld) {
